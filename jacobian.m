@@ -41,10 +41,11 @@ r(t) = r_1 + r_3(t);
 R(t) = R_1(t) + R_2(t);
 
 vector_closure = r(t) - R(t);
+q_set = [s(t)];
 
 % Find the derivative of r_1 with respect to t
 dJ_dt = simplify(diff(vector_closure, t));
-q_set = [s(t)];
+
 % Now, express the derivative with respect to s(t)
 dJ_dq = simplify(dJ_dt / diff(q_set, t));
 
